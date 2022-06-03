@@ -8,6 +8,8 @@ spring:
     username: root
     password: abc123
 
+
+
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true  #配置数据库下划线字段对应Java驼峰法属性
@@ -15,3 +17,5 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: assign_id
+
+
