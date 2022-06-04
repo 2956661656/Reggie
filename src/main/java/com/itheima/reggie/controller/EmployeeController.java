@@ -1,19 +1,19 @@
 package com.itheima.reggie.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.reggie.entity.Employee;
 import com.itheima.reggie.service.impl.EmployeeService;
 import com.itheima.reggie.util.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 
 @Slf4j
 @RestController
@@ -68,6 +68,52 @@ public class EmployeeController {
         //清理session中保存的员工ID
         session.removeAttribute("employee");
         return R.success("退出成功");
+    }
+
+    /**
+     * 新增员工
+     * @param employee
+     * @return
+     */
+    @PostMapping
+    public R<String> save(@RequestBody Employee employee, HttpSession session){
+        log.info("新增员工：{}", employee.toString());
+
+        //设置初始密码123456，进行md5加密
+        String password = DigestUtils.md5DigestAsHex("123456".getBytes(StandardCharsets.UTF_8));
+
+        employee.setPassword(password);
+
+        LocalDateTime dateTime = LocalDateTime.now();
+
+        employee.setCreateTime(dateTime);
+        log.info("员工创建时间：{}", dateTime);
+        employee.setUpdateTime(dateTime);
+
+        //获取当前登录用户的ID并设置为当前正在注册的注册人
+        employee.setCreateUser((long)session.getAttribute("employee"));
+
+        employeeService.save(employee);
+
+        return R.success("新增员工成功");
+    }
+
+    @GetMapping("/page")
+    public R<Page<Employee>> page(Integer curPage, Integer pageSize,
+                        @RequestParam(required = false) String name){
+        log.info("page={},pageSize={},name={}", curPage, pageSize, name);
+
+        Page<Employee> page = new Page<>(curPage, pageSize);
+
+        LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<>();
+        //添加过滤条件
+        queryWrapper.like(StringUtils.hasLength(name),Employee::getName,name);
+        //添加排序条件
+        queryWrapper.orderByDesc(Employee::getUpdateTime);
+
+        employeeService.page(page,queryWrapper);
+
+        return R.success(page);
     }
 
 }
