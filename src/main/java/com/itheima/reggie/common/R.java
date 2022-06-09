@@ -1,4 +1,4 @@
-package com.itheima.reggie.util;
+package com.itheima.reggie.common;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,8 @@
 package com.itheima.reggie.filter;
 
 import com.alibaba.fastjson.JSON;
-import com.itheima.reggie.util.R;
+import com.itheima.reggie.common.R;
+import com.itheima.reggie.util.BaseContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.AntPathMatcher;
 
@@ -54,6 +55,13 @@ public class LoginCheckFilter implements Filter {
         //已登录，放行
         if (employee != null) {
             log.info("登录过滤器检测到需要放行的请求：{}已登录", employee);
+
+            long threadId = Thread.currentThread().getId();
+            log.info("线程ID为{}", threadId);
+
+            Long empId = (Long) employee;
+            BaseContext.setCurrentId(empId);     //将当前登录的用户设置到当前线程，用于共享
+
             filterChain.doFilter(request, response);
             return;
         }
