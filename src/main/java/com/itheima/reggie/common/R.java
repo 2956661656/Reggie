@@ -1,5 +1,7 @@
 package com.itheima.reggie.common;
 
+import lombok.Data;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +9,7 @@ import java.util.Map;
  * 通用的返回结果类
  * @param <T>
  */
+@Data
 public class R<T> {
     private Integer code; //响应码：1成功，其他失败
     private String msg; //响应信息

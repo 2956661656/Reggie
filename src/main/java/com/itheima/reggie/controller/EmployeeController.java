@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.reggie.common.R;
 import com.itheima.reggie.entity.Employee;
 import com.itheima.reggie.service.impl.EmployeeService;
+import com.itheima.reggie.util.BaseContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
@@ -55,7 +56,7 @@ public class EmployeeController {
         }
 
         //登录成功
-        session.setAttribute("employee", employee.getId());
+        session.setAttribute("employee", aEmployee.getId());
 
         return R.success(employee);
     }
@@ -110,7 +111,7 @@ public class EmployeeController {
      * @return 通用结果《与员工相关的分页数据》
      */
     @GetMapping("/page")
-    public R<Page<Employee>> page(Integer curPage, Integer pageSize,
+    public R<Page<Employee>> page(@RequestParam(defaultValue = "1") Integer curPage, Integer pageSize,
                                   @RequestParam(required = false) String name) {
         log.info("page={},pageSize={},name={}", curPage, pageSize, name);
 
@@ -144,6 +145,8 @@ public class EmployeeController {
 //        employee.setUpdateTime(LocalDateTime.now());
 //        Long employeeId = (Long) session.getAttribute("employee");
 //        employee.setUpdateUser(employeeId);
+        BaseContext.setCurrentId((Long) session.getAttribute("employee"));
+
         employeeService.updateById(employee);
         return R.success("员工信息修改成功");
     }

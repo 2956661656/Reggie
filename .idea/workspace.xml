@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89eb7c83-9798-49c1-bca4-8d415c395d72" name="变更" comment="登录功能">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/JacksonObjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/MyMetaObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/util/BaseContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/entity/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/util/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/js/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/js/request.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,25 +49,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Development/JavaWeb/springMVC/springMVC-rest1&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facet&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;3acf5c7b740d6e2538f3a7b88cf069b3&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Development/JavaWeb/springMVC/springMVC-rest1",
+    "project.structure.last.edited": "Facet",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "3acf5c7b740d6e2538f3a7b88cf069b3"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Development\JavaWeb\reggie\reggie\src\main\resources" />
@@ -81,7 +76,7 @@
       <recent name="D:\Development\JavaWeb\reggie\reggie\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript 调试.login">
+  <component name="RunManager" selected="Spring Boot.ReggieApplication">
     <configuration name="generated-requests | ########################################################################Reggie##################################################################################################" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="7" requestIdentifier="########################################################################Reggie##################################################################################################" runType="运行单个请求">
       <method v="2" />
     </configuration>
@@ -112,8 +107,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP 请求.generated-requests | 新增员工" />
         <item itemvalue="Spring Boot.ReggieApplication" />
+        <item itemvalue="HTTP 请求.generated-requests | 新增员工" />
         <item itemvalue="HTTP 请求.generated-requests | ########################################################################Reggie##################################################################################################" />
       </list>
     </recent_temporary>
@@ -146,7 +141,9 @@
       <workItem from="1654589660696" duration="448000" />
       <workItem from="1654592950526" duration="735000" />
       <workItem from="1654733209456" duration="4165000" />
-      <workItem from="1654765771609" duration="3874000" />
+      <workItem from="1654765771609" duration="3893000" />
+      <workItem from="1654827359336" duration="8621000" />
+      <workItem from="1654856632887" duration="3795000" />
     </task>
     <task id="LOCAL-00001" summary="登录功能">
       <created>1653567880883</created>
@@ -169,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654341496085</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="登录功能">
+      <created>1654772069768</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654772069768</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,5 +193,92 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="登录功能" />
     <option name="LAST_COMMIT_MESSAGE" value="登录功能" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/EmployeeController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestResponseBodyMethodProcessor.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java</url>
+          <line>229</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java</url>
+          <line>239</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-web/5.3.6/spring-web-5.3.6-sources.jar!/org/springframework/web/method/support/HandlerMethodReturnValueHandlerComposite.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java</url>
+          <line>253</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java</url>
+          <line>278</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java</url>
+          <line>292</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java</url>
+          <line>305</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../apache/apache-maven-3.8.5/localRepository/org/springframework/spring-webmvc/5.3.6/spring-webmvc-5.3.6-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java</url>
+          <line>378</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/itheima/reggie/common/MyMetaObjectHandler.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/EmployeeController.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/itheima/reggie/controller/EmployeeController.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.reflect.Method" memberName="returnType" />
+        <PinnedItemInfo parentTag="org.springframework.web.method.support.ModelAndViewContainer" memberName="view" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
