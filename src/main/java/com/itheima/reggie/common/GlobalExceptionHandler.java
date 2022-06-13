@@ -21,14 +21,15 @@ public class GlobalExceptionHandler {
 
     /**
      * 异常处理异常
+     *
      * @return
      */
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-    public R<String> exceptionHandler(SQLIntegrityConstraintViolationException exception){
+    public R<String> exceptionHandler(SQLIntegrityConstraintViolationException exception) {
         log.error(exception.getLocalizedMessage());
         String message = exception.getMessage();
 
-        if (message.contains("Duplicate entry")){
+        if (message.contains("Duplicate entry")) {
             //违反唯一约束
             String[] split = message.split(" ");
             String msg = split[2] + "已存在";
@@ -40,10 +41,11 @@ public class GlobalExceptionHandler {
 
     /**
      * 捕获自定义的“相关联异常”
+     *
      * @return 返回给前端错误信息
      */
     @ExceptionHandler(RelationException.class)
-    public R<String> exceptionHandler(RelationException exception){
+    public R<String> exceptionHandler(RelationException exception) {
         log.error(exception.getLocalizedMessage());
         return R.error(exception.getMessage());
     }

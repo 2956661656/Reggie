@@ -18,4 +18,5 @@ mybatis-plus:
     db-config:
       id-type: assign_id
 
-
+reggie:
+  upload-path: Z:\
