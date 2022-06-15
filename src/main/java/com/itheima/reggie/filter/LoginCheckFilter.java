@@ -54,7 +54,7 @@ public class LoginCheckFilter implements Filter {
         Object employee = session.getAttribute("employee");
         //已登录，放行
         if (employee != null) {
-            log.info("登录过滤器检测到需要放行的请求：{}已登录", employee);
+            log.info("登录过滤器检测到需要放行的请求：{}号用户已登录", employee);
 
             long threadId = Thread.currentThread().getId();
             log.info("线程ID为{}", threadId);

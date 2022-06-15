@@ -19,4 +19,4 @@ mybatis-plus:
       id-type: assign_id
 
 reggie:
-  upload-path: Z:\
+  upload-path: C:\Users\29566\Pictures\Reggie\

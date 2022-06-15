@@ -70,7 +70,7 @@ public class DishController {
         BeanUtils.copyProperties(pageInfo, dishDtoPage, "records");
 
         List<Dish> records = pageInfo.getRecords();
-        List<DishDto> dtoList = records.stream().map((item) -> {    //map取出每一个对象
+        List<DishDto> dtoList = records.stream().map((item) -> {    //map-取出每一个对象
             //new 一个封装类
             DishDto dishDto = new DishDto();
             //对象拷贝，包含records
@@ -80,7 +80,7 @@ public class DishController {
             Category category = categoryService.getById(categoryId);
             if (category != null) {
                 //设置菜品名称
-                dishDto.setName(category.getName());
+                dishDto.setCategoryName(category.getName());
             }
             return dishDto;
         }).collect(Collectors.toList());    //收集返回list集合
@@ -89,6 +89,47 @@ public class DishController {
         dishDtoPage.setRecords(dtoList);
 
         return R.success(dishDtoPage);
+    }
+
+    /**
+     * 根据ID查询菜品信息和对应的口味信息
+     * @param id 前端传输的菜品ID
+     * @return 返回数据传输对象（包含口味）
+     */
+    @GetMapping("/{id}")
+    public R<DishDto> updateQuery(@PathVariable("id") Long id){
+        DishDto dishDto = dishService.getByIdWithFlavor(id);
+        return R.success(dishDto);
+    }
+
+    /**
+     * 修改菜品
+     * @param dishDto
+     */
+    @PutMapping
+    public R<String> updateAct(@RequestBody DishDto dishDto){
+        log.info("修改请求传输对象：{}", dishDto);
+        dishService.updateWithFlavor(dishDto);
+        return R.success("修改成功");
+    }
+
+    /**
+     * 查询一类菜品下所有的菜品
+     * @param dish 前端传入的菜品
+     * @return 返回一个菜品列表
+     */
+    @GetMapping("/list")
+    public R<List<Dish>> list(Dish dish){
+
+        //构造查询条件
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+        queryWrapper.eq(Dish::getStatus, 1);    //查询状态为在售的菜品（status=1）
+        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+
+        List<Dish> dishes = dishService.list(queryWrapper);
+
+        return R.success(dishes);
     }
 
 }
