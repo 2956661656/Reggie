@@ -6,6 +6,7 @@ import com.itheima.reggie.common.R;
 import com.itheima.reggie.dto.DishDto;
 import com.itheima.reggie.entity.Category;
 import com.itheima.reggie.entity.Dish;
+import com.itheima.reggie.entity.DishFlavor;
 import com.itheima.reggie.service.CategoryService;
 import com.itheima.reggie.service.DishFlavorService;
 import com.itheima.reggie.service.DishService;
@@ -113,12 +114,12 @@ public class DishController {
         return R.success("修改成功");
     }
 
-    /**
+    /*
      * 查询一类菜品下所有的菜品
      * @param dish 前端传入的菜品
      * @return 返回一个菜品列表
      */
-    @GetMapping("/list")
+/*    @GetMapping("/list")
     public R<List<Dish>> list(Dish dish){
 
         //构造查询条件
@@ -130,6 +131,39 @@ public class DishController {
         List<Dish> dishes = dishService.list(queryWrapper);
 
         return R.success(dishes);
-    }
+    }*/
+    /**
+     * 查询一类菜品下所有的菜品
+     * @param dish 前端传入的菜品
+     * @return 返回一个菜品列表
+     */
+    @GetMapping("/list")
+    public R<List<DishDto>> list(Dish dish){
 
+        //构造查询条件
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+        queryWrapper.eq(Dish::getStatus, 1);    //查询状态为在售的菜品（status=1）
+        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+
+        List<Dish> dishes = dishService.list(queryWrapper);
+
+        List<DishDto> dishDtoList = dishes.stream().map(item -> {
+
+            DishDto dishDto = new DishDto();
+
+            BeanUtils.copyProperties(item, dishDto);
+
+            //菜品ID
+            Long id = item.getId();
+            LambdaQueryWrapper<DishFlavor> queryWrapper1 = new LambdaQueryWrapper<>();
+            //查询菜品对应的口味信息
+            queryWrapper1.eq(DishFlavor::getDishId, id);
+            List<DishFlavor> dishFlavors = dishFlavorService.list(queryWrapper1);
+            dishDto.setFlavors(dishFlavors);
+            return dishDto;
+        }).collect(Collectors.toList());
+
+        return R.success(dishDtoList);
+    }
 }

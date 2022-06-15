@@ -102,4 +102,20 @@ public class SetMealController {
         setmealService.removeWithDish(ids);
         return R.success("套餐数据删除成功");
     }
+
+    /**
+     * 根据条件查询套餐
+     * @param setMeal 前端传入的ID，保存到一个实体类
+     * @return
+     */
+    @GetMapping("/list")
+    public R<List<SetMeal>> list(SetMeal setMeal){
+        LambdaQueryWrapper<SetMeal> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(setMeal.getCategoryId() != null, SetMeal::getCategoryId, setMeal.getCategoryId());
+        queryWrapper.eq(setMeal.getStatus() != null, SetMeal::getStatus, setMeal.getStatus());
+        queryWrapper.orderByDesc(SetMeal::getUpdateTime);
+        List<SetMeal> list = setmealService.list(queryWrapper);
+        return R.success(list);
+    }
+
 }

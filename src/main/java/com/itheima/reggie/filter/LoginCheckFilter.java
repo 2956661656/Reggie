@@ -36,7 +36,9 @@ public class LoginCheckFilter implements Filter {
                 "/employee/login",
                 "employee/logout",
                 "/backend/**",
-                "/front/**"
+                "/front/**",
+                "/user/sendMsg",
+                "/user/login"
         };
 
         //判断本次请求是否需要处理
@@ -52,7 +54,8 @@ public class LoginCheckFilter implements Filter {
         //判断是否已经登录
         HttpSession session = request.getSession();
         Object employee = session.getAttribute("employee");
-        //已登录，放行
+        Object user = session.getAttribute("user");
+        //员工已登录，放行
         if (employee != null) {
             log.info("登录过滤器检测到需要放行的请求：{}号用户已登录", employee);
 
@@ -61,6 +64,19 @@ public class LoginCheckFilter implements Filter {
 
             Long empId = (Long) employee;
             BaseContext.setCurrentId(empId);     //将当前登录的用户设置到当前线程，用于共享
+
+            filterChain.doFilter(request, response);
+            return;
+        }
+        //用户已登录，放行
+        if (user != null) {
+            log.info("登录过滤器检测到需要放行的请求：{}号用户已登录", user);
+
+            long threadId = Thread.currentThread().getId();
+            log.info("线程ID为{}", threadId);
+
+            Long userId = (Long) user;
+            BaseContext.setCurrentId(userId);     //将当前登录的用户设置到当前线程，用于共享
 
             filterChain.doFilter(request, response);
             return;
